@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Songs</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 20px;            
+            background-color: #333;
+            background-image: url("https://c0.wallpaperflare.com/preview/86/115/821/artist-band-bass-black-and-white.jpg");
+            backdrop-filter: blur(30px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .card {
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: rgba(225, 225, 225, 0.392);
+
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        h1 {
+            font-size: 38px;
+            font-weight: 500;
+            color: rgb(227, 203, 127);
+            letter-spacing: 0;
+            line-height: 1.5em;
+            padding-bottom: 15px;
+            position: relative;
+            animation: move-words 20s linear infinite;
+            margin: 0;
+            text-shadow: 2px 2px #000000;
+            }
+
+            :before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 5px;
+            width: 55px;
+            background-color: #111;
+            }
+            :after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            height: 1px;
+            width: 95%;
+            max-width: 255px;
+            background-color: #333;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>ALL SONGS</h1>
+
+    <% for (let mus of music) { %>
+        <div class="card">
+            <p><strong>Name:</strong> <%= mus.name %></p>
+            <p><strong>Artist:</strong> <%= mus.artist %></p>
+            <p><strong>Mood:</strong> <%= mus.mood %></p>
+            <p><strong>Link of Song:</strong> <%= mus.link %></p>
+        </div>
+        <hr>
+    <% } %>
+</body>
+
+</html>

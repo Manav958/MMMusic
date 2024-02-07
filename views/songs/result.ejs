@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOD</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.heading {
+  /* Your specific styles for the heading class go here */
+  width: 600px;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: #ffffffe6;
+  margin-bottom: 20px;
+  background-image: url('https://c0.wallpaperflare.com/preview/730/977/271/drums-set-people-man.jpg'); /* Background image */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://c0.wallpaperflare.com/preview/730/977/271/drums-set-people-man.jpg'); /* Background image */
+  background-size: cover; /* Ensure the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-position: center; 
+    backdrop-filter: blur(5px);
+  flex-direction: column;
+}
+
+.box {
+  width: 300px;
+  border-bottom: 20px solid #8147315c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.box h1 {
+  color: #fff;
+  background-image: url('https://c0.wallpaperflare.com/preview/730/977/271/drums-set-people-man.jpg'); /* Background image */
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.box ul {
+  position: relative;
+  background: #fff;
+}
+
+.box ul:hover li {
+  opacity: 0.2;
+}
+
+.box ul li {
+  list-style: none;
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s;
+}
+
+.box ul li:hover {
+  transform: scale(1.1);
+  z-index: 5;
+  background-image: url('https://c0.wallpaperflare.com/preview/730/977/271/drums-set-people-man.jpg'); /* Background image */
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  opacity: 1;
+}
+
+.box ul li span {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: #25bcff;
+  color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+
+.box ul li:hover span {
+  background: #fff;
+  color: #25bcff;
+}
+
+</style>
+<body>
+  <h1 class="heading">Playlist</h1>
+    <div class="box">
+       <h1> <%= mood %> </h1>
+       <ul>
+            
+            <%  music.forEach(song=>{ %>
+                <li>
+                    <h2><%=song.name %></h2>
+
+                </li>
+            <% }); %>
+       </ul>
+    </div>
+    
+</body>
+</html>

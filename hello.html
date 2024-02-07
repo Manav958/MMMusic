@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Interface</title>
+</head>
+<body>
+    <h1>Chatbot Interface</h1>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Enter your message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        sendButton.addEventListener('click', () => {
+            const message = userInput.value;
+            sendMessage(message);
+        });
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.innerText = `[${sender}] ${message}`;
+            chatMessages.appendChild(messageDiv);
+        }
+
+        function sendMessage(message) {
+            appendMessage(message, 'User');
+            userInput.value = '';
+
+            // Send the user's message to the server
+            fetch('/api/predict_mood', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const predictedMood = data.predicted_mood;
+                appendMessage(`Predicted Mood: ${predictedMood}`, 'Chatbot');
+            })
+            .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>

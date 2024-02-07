@@ -1,0 +1,41 @@
+<% layout('layouts/bp') %>
+<div class="row">
+    <h1 class="text-center">New Song</h1>
+    <div class="col-6 offset-3">
+        <form action="/songs" method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="Songs[name]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="artist">Artist</label>
+                <input class="form-control" type="text" id="artist" name="Songs[artist]">
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="mood">Mood</label>
+                <input class="form-control" type="text" id="mood" name="Songs[mood]">
+
+            </div>
+
+            
+
+            <div class="mb-3">
+                <label class="form-label" for="link">Link of song</label>
+                <textarea class="form-control" type="text" id="link" name="Songs[link]"></textarea>
+
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Song</button>
+
+            </div>
+            
+            
+
+        </form>
+        
+    </div>
+    
+
+</div> 
