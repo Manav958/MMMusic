@@ -9,7 +9,7 @@ services:
 
   - name: python-app
     type: web
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install 
     startCommand: python TEST_NLP.py
     envVars:
       - key: PORT
